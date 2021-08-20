@@ -2,17 +2,19 @@
 #include "functions.h"
 
 int main() {
-
-    int a, b, s;
   
-  // ENTRADA DE DADOS
-  scanf("%d %d", &a, &b);
+  int v [1000];
+  int n = 0;
+  int menor= 0, maior= 0;
 
-  // PROCESSAMENTO - EXECUTANDO A FUNCAO
-  s = somar(a, b);
+  scanf ("%d", &n);
 
-  // SAIDA - IMPRIMINDO O RESULTADO
-  printf("SOMA = %d\n", s);
+  for (int i=0; i<n; i++) {
+    scanf ("%d", &v[i]);
+  }
 
-  return(0);
+  printf ("MENOR = %d\n", menor(v,n));
+
+  return 0;
+
 }

@@ -5,7 +5,7 @@ int main() {
   
   int v [1000];
   int n = 0;
-  int menor= 0, maior= 0;
+  int menor = 0, maior = 0;
 
   scanf ("%d", &n);
 
@@ -13,7 +13,10 @@ int main() {
     scanf ("%d", &v[i]);
   }
 
-  printf ("MENOR = %d\n", menor(v,n));
+  menor_maior(v, n, &menor, &maior);
+
+  printf ("MENOR = %d\n", menor);
+  printf ("MAIOR = %d\n", maior);
 
   return 0;
 

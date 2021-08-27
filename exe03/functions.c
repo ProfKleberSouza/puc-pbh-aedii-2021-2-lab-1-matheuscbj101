@@ -1,5 +1,6 @@
 #include "functions.h"
 
+
 void menor_maior(int v[], int n, int *menor, int *maior) {
   int mai = v[0];
   int men = v[0];

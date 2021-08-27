@@ -1,18 +1,31 @@
 #include <stdio.h>
-#include "functions.h"
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 
-int main() {
+bool is_palindromo_rec (char texto [], int i, int f) {
+ if (i >= f) { 
+ return true;
+ }
+ if (texto [i] != texto [f]) {
+   return false;
+ }
+ i++;
+ f--;
+ return is_palindromo_rec (texto, i, f);
+}
 
-    int a, b, s;
-  
-  // ENTRADA DE DADOS
-  scanf("%d %d", &a, &b);
+bool is_palindromo (char texto []) {
+  return is_palindromo_rec (texto, 0, strlen(texto)-1);
+}
 
-  // PROCESSAMENTO - EXECUTANDO A FUNCAO
-  s = somar(a, b);
-
-  // SAIDA - IMPRIMINDO O RESULTADO
-  printf("SOMA = %d\n", s);
-
-  return(0);
+int main(void) {  
+ char texto[50] = "acbca";
+ scanf ("%s", texto);
+ if (is_palindromo(texto)) {
+   printf ("%s - Eh palindromo!\n", texto);
+ }
+ else {
+   printf ("%s - NAO eh palindromo\n", texto);
+   }  
 }

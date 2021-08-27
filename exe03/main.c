@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "functions.h"
 
+
 int main() {
   
   int v [1000];

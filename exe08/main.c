@@ -23,9 +23,9 @@ int main(void) {
  char texto[50] = "acbca";
  scanf ("%s", texto);
  if (is_palindromo(texto)) {
-   printf ("%s - Eh palindromo!\n", texto);
+   printf ("SIM");
  }
  else {
-   printf ("%s - NAO eh palindromo\n", texto);
+   printf ("NAO");
    }  
 }

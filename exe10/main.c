@@ -1,18 +1,31 @@
 #include <stdio.h>
-#include "functions.h"
 
-int main() {
 
-    int a, b, s;
+void tabela_verdade_rec(char tabela[], int d, int pos) {
+
+  if ( d == 0) {
+    tabela [pos] = '\0';
+    printf ("%s\n", tabela);
+  } else {    
+       tabela [pos] = '0';
+       tabela_verdade_rec (tabela, d-1, pos+1);
+   
+       tabela [pos] = '1';
+       tabela_verdade_rec (tabela, d-1, pos+1);
+    } 
+}
+
+void tabela_verdade (int d) {
   
-  // ENTRADA DE DADOS
-  scanf("%d %d", &a, &b);
+  char tabela [100];
+  
+  tabela_verdade_rec (tabela, d, 0);
+}
 
-  // PROCESSAMENTO - EXECUTANDO A FUNCAO
-  s = somar(a, b);
 
-  // SAIDA - IMPRIMINDO O RESULTADO
-  printf("SOMA = %d\n", s);
-
-  return(0);
+int main (void) {
+   int d;
+   scanf ("%d", &d);
+   tabela_verdade (d);
+   return 0;
 }
